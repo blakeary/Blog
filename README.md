@@ -12,15 +12,13 @@ Ensure you have Node.js and npm installed. You will also need a MongoDB database
 
 ## MongoDB Configuration
 
-First, set up your MongoDB credentials. Update the `server.js` file or relevant configuration file with the following (make sure to replace `<username>`, `<password>`, and `collection_name` with your own details):
+First, set up your MongoDB credentials. Update the `server.js` file or relevant configuration file with the following (make sure to replace `mongodbConnectionString`, and `mongodbCollection` with your own details):
 
 ```javascript
 // MongoDB connection string
 const mongodbConnectionString = encodeURIComponent("mongodb+srv://<username>:<password>@cluster.mongodb.net/");
 const mongodbCollection = encodeURIComponent("collection_name");
 const dbURI = `${mongodbConnectionString}/${mongodbCollection}?retryWrites=true&w=majority`;
-
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 # Install dependencies
 npm install
